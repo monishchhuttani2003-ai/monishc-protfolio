@@ -1,0 +1,1301 @@
+/* ==========================================================
+   PREMIUM LOADER
+   PART 1
+========================================================== */
+
+.loader{
+
+    position:fixed;
+
+    inset:0;
+
+    width:100%;
+
+    height:100vh;
+
+    overflow:hidden;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#fbfaff;
+
+    z-index:999999;
+
+    isolation:isolate;
+
+}
+
+/* ========================================================== */
+
+.background-layer{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+}
+
+/* ========================================================== */
+
+.gradient-bg{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    radial-gradient(circle at 15% 15%,
+    rgba(124,58,237,.12),
+    transparent 32%),
+
+    radial-gradient(circle at 85% 20%,
+    rgba(168,85,247,.14),
+    transparent 35%),
+
+    radial-gradient(circle at 50% 90%,
+    rgba(196,181,253,.12),
+    transparent 40%),
+
+    linear-gradient(
+        180deg,
+        #ffffff,
+        #faf8ff
+    );
+
+}
+
+/* ========================================================== */
+
+.grid-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+
+    linear-gradient(
+        rgba(124,58,237,.04) 1px,
+        transparent 1px
+    ),
+
+    linear-gradient(
+        90deg,
+        rgba(124,58,237,.04) 1px,
+        transparent 1px
+    );
+
+    background-size:42px 42px;
+
+    mask-image:
+    radial-gradient(circle,#000 65%,transparent);
+
+    animation:gridMove 25s linear infinite;
+
+}
+
+/* ========================================================== */
+
+.noise-layer{
+
+    position:absolute;
+
+    inset:0;
+
+    opacity:.05;
+
+    background-image:
+
+    radial-gradient(#000 1px,transparent 1px);
+
+    background-size:16px 16px;
+
+}
+
+/* ==========================================================
+   GLASS BORDER
+========================================================== */
+
+.glass-border{
+
+    position:absolute;
+
+    inset:18px;
+
+    border-radius:36px;
+
+    border:1px solid rgba(255,255,255,.55);
+
+    box-shadow:
+
+    inset 0 1px 1px rgba(255,255,255,.85),
+
+    0 0 0 1px rgba(124,58,237,.05);
+
+}
+
+/* ==========================================================
+   PURPLE ORBS
+========================================================== */
+
+.orb{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:blur(90px);
+
+    animation:orbFloat 12s ease-in-out infinite;
+
+}
+
+.orb-one{
+
+    width:360px;
+
+    height:360px;
+
+    top:-140px;
+
+    left:-120px;
+
+    background:#b794ff;
+
+}
+
+.orb-two{
+
+    width:300px;
+
+    height:300px;
+
+    right:-90px;
+
+    top:12%;
+
+    background:#d8b4fe;
+
+    animation-delay:2s;
+
+}
+
+.orb-three{
+
+    width:420px;
+
+    height:420px;
+
+    bottom:-180px;
+
+    left:40%;
+
+    background:#ede9fe;
+
+    animation-delay:5s;
+
+}
+
+/* ==========================================================
+   CONTENT
+========================================================== */
+
+.loader-content{
+
+    position:relative;
+
+    width:min(760px,90vw);
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    z-index:20;
+
+}
+
+/* ==========================================================
+   LOGO AREA
+========================================================== */
+
+.logo-wrapper{
+
+    position:relative;
+
+    width:170px;
+
+    height:170px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-bottom:28px;
+
+}
+
+/* ========================================================== */
+
+.logo-glow{
+
+    position:absolute;
+
+    width:180px;
+
+    height:180px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(
+
+    rgba(124,58,237,.28),
+
+    transparent 72%
+
+    );
+
+    animation:glowPulse 3s infinite;
+
+}
+
+/* ========================================================== */
+
+.logo-box{
+
+    position:relative;
+
+    width:120px;
+
+    height:120px;
+
+    border-radius:32px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:
+
+    rgba(255,255,255,.55);
+
+    backdrop-filter:blur(30px);
+
+    -webkit-backdrop-filter:blur(30px);
+
+    border:1px solid rgba(255,255,255,.65);
+
+    box-shadow:
+
+    0 20px 50px rgba(124,58,237,.15),
+
+    inset 0 1px 1px rgba(255,255,255,.9);
+
+    animation:logoFloat 3s ease-in-out infinite;
+
+}
+
+/* ========================================================== */
+
+.loader-logo{
+
+    width:72px;
+
+    height:72px;
+
+    object-fit:contain;
+
+    filter:
+
+    drop-shadow(
+
+    0 8px 18px rgba(124,58,237,.25)
+
+    );
+
+}
+
+/* ==========================================================
+   TITLE
+========================================================== */
+
+.loader-title{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:6px;
+
+    margin-bottom:12px;
+
+    font-size:56px;
+
+    font-weight:900;
+
+    line-height:1;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    color:#111827;
+
+    animation:titleFloat 5s ease-in-out infinite;
+
+}
+
+.loader-title span{
+
+    color:#7c3aed;
+
+}
+
+/* ========================================================== */
+
+.loader-role{
+
+    font-size:18px;
+
+    font-weight:600;
+
+    letter-spacing:2px;
+
+    color:#6b7280;
+
+    margin-bottom:28px;
+
+}
+
+/* ========================================================== */
+
+.divider{
+
+    width:110px;
+
+    height:5px;
+
+    border-radius:50px;
+
+    margin-bottom:30px;
+
+    background:linear-gradient(
+
+        90deg,
+
+        #7c3aed,
+
+        #a855f7,
+
+        #c084fc
+
+    );
+
+    box-shadow:
+
+        0 10px 25px rgba(124,58,237,.18);
+
+}
+
+/* ==========================================================
+   STATUS
+========================================================== */
+
+.loader-status{
+
+    min-height:25px;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    color:#6b7280;
+
+    margin-bottom:32px;
+
+    animation:textPulse 2s ease infinite;
+
+}
+
+/* ==========================================================
+   PROGRESS
+========================================================== */
+
+.progress-area{
+
+    width:min(520px,90vw);
+
+}
+
+.progress-track{
+
+    position:relative;
+
+    width:100%;
+
+    height:12px;
+
+    overflow:hidden;
+
+    border-radius:50px;
+
+    background:rgba(124,58,237,.10);
+
+    box-shadow:
+
+        inset 0 2px 8px rgba(0,0,0,.08);
+
+}
+
+.progress-fill{
+
+    position:relative;
+
+    width:0;
+
+    height:100%;
+
+    overflow:hidden;
+
+    border-radius:50px;
+
+    background:linear-gradient(
+
+        90deg,
+
+        #7c3aed,
+
+        #9d4edd,
+
+        #c084fc
+
+    );
+
+    transition:width .22s linear;
+
+}
+
+.progress-shine{
+
+    position:absolute;
+
+    top:0;
+
+    left:-80px;
+
+    width:70px;
+
+    height:100%;
+
+    background:rgba(255,255,255,.55);
+
+    filter:blur(8px);
+
+    animation:progressShine 1.8s linear infinite;
+
+}
+
+.progress-footer{
+
+    margin-top:18px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    color:#6b7280;
+
+    font-size:15px;
+
+    font-weight:600;
+
+}
+
+.progress-footer strong{
+
+    font-size:28px;
+
+    color:#7c3aed;
+
+}
+
+/* ==========================================================
+   RINGS
+========================================================== */
+
+.ring{
+
+    position:absolute;
+
+    left:50%;
+
+    border-radius:50%;
+
+    transform:translateX(-50%);
+
+    border:1px solid rgba(124,58,237,.12);
+
+}
+
+.ring1{
+
+    width:180px;
+
+    height:180px;
+
+    top:-6px;
+
+    animation:ringRotate 10s linear infinite;
+
+}
+
+.ring2{
+
+    width:235px;
+
+    height:235px;
+
+    top:-34px;
+
+    animation:ringRotateReverse 16s linear infinite;
+
+}
+
+.ring3{
+
+    width:290px;
+
+    height:290px;
+
+    top:-62px;
+
+    animation:ringRotate 24s linear infinite;
+
+}
+
+/* ==========================================================
+   FLOATING DOTS
+========================================================== */
+
+.dot{
+
+    position:absolute;
+
+    width:8px;
+
+    height:8px;
+
+    border-radius:50%;
+
+    background:#b794ff;
+
+    animation:dotFloat 6s ease-in-out infinite;
+
+}
+
+.dot1{top:10%;left:12%;}
+.dot2{top:18%;right:16%;animation-delay:1s;}
+.dot3{top:32%;left:8%;animation-delay:2s;}
+.dot4{top:40%;right:10%;animation-delay:3s;}
+.dot5{bottom:28%;left:16%;animation-delay:1.5s;}
+.dot6{bottom:18%;right:14%;animation-delay:2.5s;}
+.dot7{bottom:12%;left:42%;animation-delay:4s;}
+.dot8{top:60%;right:45%;animation-delay:5s;}
+
+/* ==========================================================
+   WAVES
+========================================================== */
+
+.wave-wrapper{
+
+    position:absolute;
+
+    bottom:0;
+
+    left:0;
+
+    width:100%;
+
+    height:170px;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+}
+
+.wave{
+
+    position:absolute;
+
+    left:-20%;
+
+    width:140%;
+
+    border-radius:50%;
+
+}
+
+.wave1{
+
+    height:160px;
+
+    bottom:-110px;
+
+    background:rgba(124,58,237,.05);
+
+    animation:waveMove 12s linear infinite;
+
+}
+
+.wave2{
+
+    height:120px;
+
+    bottom:-85px;
+
+    background:rgba(124,58,237,.08);
+
+    animation:waveMoveReverse 18s linear infinite;
+
+}
+
+/* ==========================================================
+   ANIMATIONS
+========================================================== */
+
+@keyframes logoFloat{
+
+    0%,100%{transform:translateY(0);}
+
+    50%{transform:translateY(-12px);}
+
+}
+
+@keyframes glowPulse{
+
+    0%,100%{transform:scale(1);opacity:.7;}
+
+    50%{transform:scale(1.15);opacity:1;}
+
+}
+
+@keyframes orbFloat{
+
+    0%,100%{transform:translate(0,0);}
+
+    50%{transform:translate(35px,-30px);}
+
+}
+
+@keyframes gridMove{
+
+    from{transform:translateY(0);}
+
+    to{transform:translateY(42px);}
+
+}
+
+@keyframes titleFloat{
+
+    0%,100%{transform:translateY(0);}
+
+    50%{transform:translateY(-5px);}
+
+}
+
+@keyframes textPulse{
+
+    0%,100%{opacity:1;}
+
+    50%{opacity:.45;}
+
+}
+
+@keyframes progressShine{
+
+    from{left:-80px;}
+
+    to{left:110%;}
+
+}
+
+@keyframes ringRotate{
+
+    from{transform:translateX(-50%) rotate(0deg);}
+
+    to{transform:translateX(-50%) rotate(360deg);}
+
+}
+
+@keyframes ringRotateReverse{
+
+    from{transform:translateX(-50%) rotate(360deg);}
+
+    to{transform:translateX(-50%) rotate(0deg);}
+
+}
+
+@keyframes dotFloat{
+
+    0%,100%{transform:translateY(0) scale(1);}
+
+    50%{transform:translateY(-15px) scale(1.3);}
+
+}
+
+@keyframes waveMove{
+
+    from{transform:translateX(0);}
+
+    to{transform:translateX(120px);}
+
+}
+
+@keyframes waveMoveReverse{
+
+    from{transform:translateX(120px);}
+
+    to{transform:translateX(0);}
+
+}
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media(max-width:768px){
+
+.loader-title{
+
+    font-size:34px;
+
+    letter-spacing:2px;
+
+}
+
+.loader-role{
+
+    font-size:15px;
+
+}
+
+.logo-wrapper{
+
+    width:130px;
+
+    height:130px;
+
+}
+
+.logo-box{
+
+    width:95px;
+
+    height:95px;
+
+}
+
+.loader-logo{
+
+    width:56px;
+
+    height:56px;
+
+}
+
+.progress-area{
+
+    width:92%;
+
+}
+
+.progress-footer strong{
+
+    font-size:22px;
+
+}
+
+}
+
+
+/* ==========================================================
+   PREMIUM PARTICLES
+========================================================== */
+
+.floating-elements{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+}
+
+.floating-elements::before,
+
+.floating-elements::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+
+    height:220px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(
+
+        rgba(124,58,237,.10),
+
+        transparent 70%
+
+    );
+
+    filter:blur(55px);
+
+}
+
+.floating-elements::before{
+
+    top:12%;
+
+    left:12%;
+
+    animation:particleGlow1 10s ease-in-out infinite;
+
+}
+
+.floating-elements::after{
+
+    bottom:12%;
+
+    right:10%;
+
+    animation:particleGlow2 12s ease-in-out infinite;
+
+}
+
+/* ==========================================================
+   GLASS HIGHLIGHT
+========================================================== */
+
+.logo-box::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:inherit;
+
+    background:
+
+    linear-gradient(
+
+        135deg,
+
+        rgba(255,255,255,.55),
+
+        transparent,
+
+        rgba(255,255,255,.15)
+
+    );
+
+    pointer-events:none;
+
+}
+
+.logo-box::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:-70%;
+
+    left:-120%;
+
+    width:80%;
+
+    height:250%;
+
+    transform:rotate(28deg);
+
+    background:
+
+    linear-gradient(
+
+        transparent,
+
+        rgba(255,255,255,.7),
+
+        transparent
+
+    );
+
+    animation:glassSweep 6s linear infinite;
+
+}
+
+/* ==========================================================
+   TEXT SHINE
+========================================================== */
+
+.loader-title{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.loader-title::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:70%;
+
+    height:100%;
+
+    transform:skewX(-25deg);
+
+    background:
+
+    linear-gradient(
+
+        transparent,
+
+        rgba(255,255,255,.85),
+
+        transparent
+
+    );
+
+    animation:titleShine 5s linear infinite;
+
+}
+
+/* ==========================================================
+   PROGRESS GLOW
+========================================================== */
+
+.progress-track::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:inherit;
+
+    box-shadow:
+
+        inset 0 0 15px rgba(124,58,237,.08);
+
+}
+
+.progress-fill{
+
+    box-shadow:
+
+        0 0 18px rgba(124,58,237,.35),
+
+        0 0 40px rgba(124,58,237,.20);
+
+}
+
+/* ==========================================================
+   ANIMATED BORDER
+========================================================== */
+
+.glass-border::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:inherit;
+
+    border:2px solid rgba(255,255,255,.45);
+
+    background:linear-gradient(
+        135deg,
+        rgba(255,255,255,.18),
+        rgba(124,58,237,.08),
+        rgba(255,255,255,.18)
+    );
+
+    opacity:.8;
+
+    pointer-events:none;
+
+    animation:borderGlow 8s linear infinite;
+}
+
+/* ==========================================================
+   PAGE FADE
+========================================================== */
+
+.loader{
+
+    animation:loaderAppear .8s ease;
+
+}
+
+/* ==========================================================
+   KEYFRAMES
+========================================================== */
+
+@keyframes glassSweep{
+
+    from{
+
+        left:-120%;
+
+    }
+
+    to{
+
+        left:180%;
+
+    }
+
+}
+
+@keyframes titleShine{
+
+    from{
+
+        left:-120%;
+
+    }
+
+    to{
+
+        left:180%;
+
+    }
+
+}
+
+@keyframes borderGlow{
+
+    0%{
+
+        opacity:.5;
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        opacity:1;
+
+        transform:scale(1.01);
+
+    }
+
+    100%{
+
+        opacity:.5;
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+@keyframes particleGlow1{
+
+    0%,100%{
+
+        transform:translate(0,0) scale(1);
+
+    }
+
+    50%{
+
+        transform:translate(35px,-25px) scale(1.15);
+
+    }
+
+}
+
+@keyframes particleGlow2{
+
+    0%,100%{
+
+        transform:translate(0,0) scale(1);
+
+    }
+
+    50%{
+
+        transform:translate(-35px,25px) scale(1.12);
+
+    }
+
+}
+
+@keyframes loaderAppear{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(1.04);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+/* ==========================================================
+   LARGE DESKTOP
+========================================================== */
+
+@media(min-width:1600px){
+
+.loader-title{
+
+    font-size:68px;
+
+}
+
+.loader-role{
+
+    font-size:20px;
+
+}
+
+.logo-wrapper{
+
+    width:190px;
+
+    height:190px;
+
+}
+
+.logo-box{
+
+    width:135px;
+
+    height:135px;
+
+}
+
+.loader-logo{
+
+    width:82px;
+
+    height:82px;
+
+}
+
+.progress-area{
+
+    width:600px;
+
+}
+
+}
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media(max-width:480px){
+
+.glass-border{
+
+    inset:10px;
+
+    border-radius:24px;
+
+}
+
+.loader-title{
+
+    font-size:26px;
+
+}
+
+.loader-role{
+
+    font-size:14px;
+
+}
+
+.loader-status{
+
+    font-size:14px;
+
+}
+
+.progress-footer{
+
+    font-size:13px;
+
+}
+
+.progress-footer strong{
+
+    font-size:20px;
+
+}
+
+.wave-wrapper{
+
+    height:120px;
+
+}
+
+}

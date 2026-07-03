@@ -1,0 +1,198 @@
+.skills {
+    width: 100%;
+    padding: 30px 0 60px;
+    background: #ffffff;
+}
+
+.skills-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+/* BOX */
+
+.skills-box {
+    border: 1px solid #eeeeee;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+/* HEADING */
+
+.skills-heading {
+    padding: 22px 25px;
+    color: #7c3aed;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+/* TECHNICAL GRID */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    border-top: 1px solid #eeeeee;
+}
+
+.skill-card {
+    min-height: 180px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+
+    border-right: 1px solid #eeeeee;
+}
+
+.skill-card:last-child {
+    border-right: none;
+}
+
+.skill-card img,
+.tool-card img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+/* TOOLS GRID */
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    border-top: 1px solid #eeeeee;
+}
+
+.tool-card {
+    min-height: 150px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+}
+
+/* ICONS */
+
+.skill-card svg,
+.tool-card svg {
+    font-size: 60px;
+}
+
+.html {
+    color: #e44d26;
+}
+
+.css {
+    color: #1572b6;
+}
+
+.js {
+    color: #f7df1e;
+}
+
+.react {
+    color: #61dafb;
+}
+
+.bootstrap {
+    color: #7c3aed;
+}
+
+.git {
+    color: #f05032;
+}
+
+.github {
+    color: #181717;
+}
+
+.vscode {
+    color: #007acc;
+}
+
+.vercel {
+    color: #000000;
+}
+
+.render {
+    color: #000000;
+}
+
+.neon {
+    color: #21e786;
+}
+
+.netlify {
+    color: #00c7b7;
+}
+
+/* TEXT */
+
+.skill-card p,
+.tool-card p {
+    font-size: 17px;
+    font-weight: 500;
+    color: #07133d;
+    text-align: center;
+}
+
+/* TABLET */
+
+@media (max-width: 992px) {
+
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .tools-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .skills-container {
+        padding: 0 15px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .tools-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .skill-card,
+    .tool-card {
+        min-height: 120px;
+    }
+
+    .skill-card svg,
+    .tool-card svg {
+        font-size: 40px;
+    }
+
+    .skill-card p,
+    .tool-card p {
+        font-size: 13px;
+    }
+
+    .skill-card img,
+    .tool-card img {
+        width: 40px;
+        height: 40px;
+    }
+
+}

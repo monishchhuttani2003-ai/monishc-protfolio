@@ -1,0 +1,19 @@
+.app {
+  width: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+#root {
+  overflow-x: hidden;
+}
+
+section {
+  scroll-margin-top: 60px;
+}

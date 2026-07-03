@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background: #faf8ff;
+  color: #111827;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+:root {
+  --primary: #7c3aed;
+  --primary-dark: #6d28d9;
+
+  --text-dark: #111827;
+  --text-light: #6b7280;
+
+  --white: #ffffff;
+
+  --border: #e5e7eb;
+
+  --section-padding: 100px 8%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+#root {
+  overflow-x: hidden;
+}
+
+section {
+  scroll-margin-top: 60px;
+}
